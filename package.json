@@ -1,0 +1,25 @@
+{
+  "name": "al-mada-dbm",
+  "version": "1.0.0",
+  "description": "Le plus grands fonds d'investissements à capitaux privés de la scène panafricaine AL MADA procéde la digitalisation par la programmation d'un système de gestion de base de données.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./app/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbdelhaqNouhi/AL-MADA-DBM.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbdelhaqNouhi/AL-MADA-DBM/issues"
+  },
+  "homepage": "https://github.com/AbdelhaqNouhi/AL-MADA-DBM#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^4.13.0"
+  }
+}

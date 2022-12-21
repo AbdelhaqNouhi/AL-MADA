@@ -1,0 +1,24 @@
+version: "3"
+services:
+
+  mongo_db:
+    container_name: mongo_db
+    image: mongo:latest
+    restart: always
+    volumes:
+      - mongo_db:/data/db
+
+  app:
+    container_name: my_app
+    build: .
+    ports:
+      - 4000:3000
+    environment:
+      PORT: 3000
+      MONGODB_URI: mongodb://mongo_db:27017
+      DB_NAME: AL-MADA-DBM
+    depends_on:
+      - mongo_db
+
+volumes:
+  mongo_db: {}

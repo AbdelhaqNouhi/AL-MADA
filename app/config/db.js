@@ -12,7 +12,14 @@ module.exports = () => {
         .then(() => {
             console.log('Mongodb connected....');
         })
-        .catch(err => console.log(err.message));
+        .catch(err => {
+            console.log('Mongodb connection error...');
+            // log all db user , password and uri
+            console.log(process.env.DB_USER);
+            console.log(process.env.DB_PASS);
+            console.log(process.env.DB_NAME);
+            console.log(err.message)
+        });
 
     mongoose.connection.on('connected', () => {
         console.log('Mongoose connected to db...');

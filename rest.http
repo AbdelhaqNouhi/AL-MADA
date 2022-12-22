@@ -1,2 +1,10 @@
 
-GET http://localhost:4000/
+
+
+POST http://localhost:4000/Api/RegisterUser
+{
+    "full_name": "nouhi abde",
+    "email": "nouhi@Mekna7.com",
+    "phone": "66666666666",
+    "password": "1223303"
+}

@@ -9,7 +9,8 @@ exports.GetAllUsers = asyncHandler(async (req, res) => {
         res.status(201).json(users)
 
     } catch (err) {
-        res.status(401).json({ status: "fail" })
+        console.error('Error: ' + err.message)
+        res.status(401).json({ status: "fail" , message: err.message})
     }
 })
 
@@ -40,6 +41,8 @@ exports.RegisterUser = asyncHandler(async (req, res) => {
         email,
         phone,
         password: HashPassword,
+    }).catch(err => {
+        console.error(err.message)
     })
 
     if (user) {

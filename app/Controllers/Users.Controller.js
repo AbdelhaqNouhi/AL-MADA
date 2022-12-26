@@ -2,7 +2,7 @@ const asyncHandler = require('express-async-handler')
 const bcrypt = require('bcryptjs')
 const UsersModule = require('../Models/UsersModel');
 
-exports.GetAllUsers = asyncHandler(async (req, res) => {
+exports.GetAllUser = asyncHandler(async (req, res) => {
 
     try {
         const users = await UsersModule.find();

@@ -11,7 +11,8 @@ app.use(express.json());
 require('./config/db')();
 
 const UsersRoute = require('./Routes/Users.route');
-app.use('/Api', UsersRoute);
+const DevelopersRoute = require('./Routes/Developer.route');
+app.use('/Api', UsersRoute, DevelopersRoute);
 
 
 //Error handler

@@ -10,16 +10,6 @@ const Developer = mongoose.model(
             required: [true, 'Please add a first name'],
         },
 
-        country: {
-            type: String,
-            required: [true, 'Please add a country'],
-        },
-
-        city: {
-            type: String,
-            required: [true, 'Please add a city'],
-        },
-
         job_title: {
             type: String,
             required: [true, 'Please add a Job Title'],
@@ -38,6 +28,16 @@ const Developer = mongoose.model(
         Annual_Salary: {
             type: String,
             required: [true, 'Please add a Annual Salary'],
+        },
+
+        country: {
+            type: String,
+            required: [true, 'Please add a country'],
+        },
+
+        city: {
+            type: String,
+            required: [true, 'Please add a city'],
         },
     })
 );

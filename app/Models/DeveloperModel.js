@@ -10,9 +10,14 @@ const Developer = mongoose.model(
             required: [true, 'Please add a first name'],
         },
 
+        country: {
+            type: String,
+            required: [true, 'Please add a country'],
+        },
+
         city: {
             type: String,
-            required: [true, 'Please add a City'],
+            required: [true, 'Please add a city'],
         },
 
         job_title: {
@@ -20,24 +25,19 @@ const Developer = mongoose.model(
             required: [true, 'Please add a Job Title'],
         },
 
+        department: {
+            type: String,
+            required: [true, 'Please add a Department'],
+        },
+
+        business_unit: {
+            type: String,
+            required: [true, 'Please add a Business Unit'],
+        },
+
         Annual_Salary: {
             type: String,
             required: [true, 'Please add a Annual Salary'],
-        },
-
-        Monthly_Pay: {
-            type: String,
-            required: [true, 'Please add a Monthly Pay'],
-        },
-
-        Weekly_Pay: {
-            type: String,
-            required: [true, 'Please add a Weekly Pay'],
-        },
-        
-        Hourly_Pay: {
-            type: String,
-            required: [true, 'Please add a Hourly Pay'],
         },
     })
 );

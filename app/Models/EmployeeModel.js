@@ -1,8 +1,8 @@
 
 const mongoose = require('mongoose')
 
-const Developer = mongoose.model(
-    "Developer",
+const Employee = mongoose.model(
+    "Employee",
     new mongoose.Schema({
 
         full_name: {
@@ -42,4 +42,4 @@ const Developer = mongoose.model(
     })
 );
 
-module.exports = Developer;
+module.exports = Employee;

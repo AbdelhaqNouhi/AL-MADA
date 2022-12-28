@@ -1,18 +1,15 @@
-const createError = require('http-errors');
+const express = require('express');
 const dotenv = require('dotenv').config();
 
-const express = require('express')
-
 const app = express();
-
 app.use(express.json());
 
 // Initialize DB
 require('./config/db')();
 
 const UsersRoute = require('./Routes/Users.route');
-const DevelopersRoute = require('./Routes/Developer.route');
-app.use('/Api', UsersRoute, DevelopersRoute);
+const EmployeeRoute = require('./Routes/Employee.route');
+app.use('/Api', UsersRoute, EmployeeRoute);
 
 
 //Error handler

@@ -1,17 +1,21 @@
 const express = require('express');
-const rateLimit = require("express-rate-limit");
 const dotenv = require('dotenv').config();
-const bodyParser = require('body-parser');
-const cors = require('cors');
+const rateLimit = require("express-rate-limit");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const app = express();
 
-// Allow Cross-Origin requests
+// Allow Cross - Origin requests
 app.use(cors());
 
-// Limit request from the same API
+// Body parser, reading data from body into req.body
+app.use(express.json({
+    limit: "15kb",
+}));
+
 const limiter = rateLimit({
-    max: 150, // 15 minutes
+    max: 150,
     windowMs: 60 * 60 * 1000,
     message: {
         status: "fail",
@@ -20,11 +24,9 @@ const limiter = rateLimit({
 });
 app.use("/api", limiter);
 
-
-// Parsing the body of the request.
-app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true }));
-
+// inetialize routes
 require("./Routes/index.routes")(app, "/api");
+
 
 // handle undefined Routes
 app.use("*", (req, res, next) => {

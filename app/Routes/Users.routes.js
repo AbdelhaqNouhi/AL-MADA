@@ -7,9 +7,10 @@ const {
     LoginUser
 } = require('../Controllers/Auth/UsersController');
 
-//Get a list of all products
-router.get('/GetAllUser', GetAllUser)
-router.post('/RegisterUser', RegisterUser)
-router.post('/', LoginUser)
+module.exports = function (app, url) {
+    app.use(url, router);
 
-module.exports = router;
+    router.get('/GetAllUser', GetAllUser);
+    router.post('/RegisterUser', RegisterUser);
+    router.post('/LoginUser', LoginUser);
+}

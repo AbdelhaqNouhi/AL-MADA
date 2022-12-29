@@ -2,10 +2,10 @@
     "name": "al-mada-dbm",
     "version": "1.0.0",
     "description": "Le plus grands fonds d'investissements à capitaux privés de la scène panafricaine AL MADA procéde la digitalisation par la programmation d'un système de gestion de base de données.",
-    "main": "app/server.",
+    "main": "app/app.js",
     "scripts": {
-        "start": "node app/app.js",
-        "dev": "nodemon app/app.js"
+        "start": "node app/server.js",
+        "dev": "nodemon app/server.js"
     },
     "repository": {
         "type": "git",

@@ -6,8 +6,9 @@ const {
     CreateEmployee
 } = require('../Controllers/EmployeeController');
 
-//Get a list of all products
-router.get('/GetAllEmployee', GetAllEmployee)
-router.post('/CreateEmployee', CreateEmployee)
+module.exports = function (app, url) {
+    app.use(url, router);
 
-module.exports = router;
+    router.get('/GetAllEmployee', GetAllEmployee);
+    router.post('/CreateEmployee', CreateEmployee);
+}

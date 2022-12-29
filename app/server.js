@@ -1,8 +1,6 @@
 const app = require('./app');
 const dotenv = require('dotenv').config();
 
-// Initialize DB
-const connectDB = require('./config/db')();
 
 process.on("uncaughtException", (err) => {
     console.log("UNCAUGHT EXCEPTION!!! shutting down...");
@@ -10,10 +8,11 @@ process.on("uncaughtException", (err) => {
     process.exit(1);
 });
 
-connectDB();
+// Initialize DB
+require('./config/db')();
+
 
 const PORT = process.env.PORT || 3000;
-
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });

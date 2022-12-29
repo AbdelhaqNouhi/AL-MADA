@@ -1,4 +1,4 @@
-module.exports = function () {
-    require("./Users.routes");
-    require('./employee.routes');
+module.exports = function (app, url) {
+    require('./Users.routes')(app, url);
+    require('./Employee.routes')(app, url);
 };

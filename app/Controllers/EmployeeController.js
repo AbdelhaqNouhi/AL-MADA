@@ -2,7 +2,7 @@ const asyncHandler = require('express-async-handler')
 
 const EmployeeModule = require('../Models/EmployeeModel');
 
-exports.GetAllEmployee = asyncHandler(async (req, res) => {
+const GetAllEmployee = asyncHandler(async (req, res) => {
     
     try {
         const Employee = await EmployeeModule.find();
@@ -14,7 +14,7 @@ exports.GetAllEmployee = asyncHandler(async (req, res) => {
     }
 })
 
-exports.CreateEmployee = asyncHandler(async (req, res) => {
+const CreateEmployee = asyncHandler(async (req, res) => {
     const { full_name, country, city, job_title, department, business_unit, Annual_Salary } = req.body
 
     //  check if all fields exists
@@ -57,3 +57,8 @@ exports.CreateEmployee = asyncHandler(async (req, res) => {
         res.status(400).json({ status: "invalide Employee data" })
     }
 })
+
+module.exports = {
+    GetAllEmployee,
+    CreateEmployee,
+}
